@@ -293,7 +293,7 @@ function loadJsonData() {
     //here the data comes from a textarea. but could be from any other source
     try {
         data = $.parseJSON($map_results.val());
-    } catch () {
+    } catch (ex) {
         alert('The JSON data could not be loaded.');
         return;
     }
