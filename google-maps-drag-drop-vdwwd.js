@@ -288,8 +288,15 @@ function loadJsonData() {
     if ($map_results.val() === '')
         return;
 
+    var data;
+
     //here the data comes from a textarea. but could be from any other source
-    var data = $.parseJSON($map_results.val());
+    try {
+        data = $.parseJSON($map_results.val());
+    } catch () {
+        alert('The JSON data could not be loaded.');
+        return;
+    }
 
     //reset map also
     resetPoiMap();
